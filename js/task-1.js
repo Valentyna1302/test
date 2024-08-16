@@ -112,3 +112,61 @@
 // console.log(sumArray([1, 2, 3, 4])); // 10
 // console.log(sumArray([10, -2, 5])); // 13
 // console.log(sumArray([])); // 0
+
+// Задача 8: Знайти найбільше число в масиві
+
+// function findMax(arr) {
+//   return Math.max(...arr);
+// }
+
+// // Оператор розпакування (...):
+
+// // Оператор розпакування (spread operator) ...arr розпаковує масив в окремі аргументи. Наприклад, для масиву [1, 2, 3] він перетворює його на 1, 2, 3.
+// // Таким чином, Math.max(...arr) стає викликом Math.max(1, 2, 3).
+
+// // Приклад використання:
+// console.log(findMax([1, 2, 3, 4])); // 4
+// console.log(findMax([-10, -2, -5])); // -2
+// console.log(findMax([5, 12, 7, 21, 3])); // 21
+
+// Задача 9: Об'єднання масивів
+
+// function mergeArrays(arr1, arr2) {
+//   const combined = arr1.concat(arr2);
+//   return combined;
+// }
+
+// function mergeArrays2(arr1, arr2) {
+//   const combined2 = arr1.concat(arr2);
+//   return combined2;
+// }
+
+// // Приклад використання:
+// console.log(mergeArrays([1, 2, 3], [4, 5, 6])); // [1, 2, 3, 4, 5, 6]
+// console.log(mergeArrays2(['a', 'b'], ['c', 'd'])); // ["a", "b", "c", "d"]
+
+// Задача 10: Заміна символів у рядку
+// Напиши функцію replaceChar, яка приймає рядок, символ для заміни та новий символ. Функція повинна повернути новий рядок, де всі вказані символи замінено на нові.
+
+// function replaceChar(str, oldChar, newChar) {
+//   return str.split(oldChar).join(newChar);
+// }
+
+// // Приклад використання:
+// console.log(replaceChar('hello world', 'o', '0')); // "hell0 w0rld"
+// console.log(replaceChar('javascript', 'a', '@')); // "j@v@script"
+
+// Задача 11: Пошук середнього арифметичного
+// Напиши функцію average, яка приймає масив чисел і повертає їх середнє арифметичне.
+
+// function average(arr) {
+//   let total = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     total += arr[i];
+//   }
+//   return total / arr.length;
+// }
+
+// // Приклад використання:
+// console.log(average([1, 2, 3, 4, 5])); // 3
+// console.log(average([10, 20, 30])); // 20
