@@ -125,4 +125,3 @@
 
 // console.log(weightsWithSuffix);
 // // ["50-kg", "60-kg", "70-kg"]
-
