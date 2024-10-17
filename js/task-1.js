@@ -170,3 +170,122 @@
 // // Приклад використання:
 // console.log(average([1, 2, 3, 4, 5])); // 3
 // console.log(average([10, 20, 30])); // 20
+
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: 'Radar', price: 1300, quantity: 4 },
+//     { name: 'Scanner', price: 2700, quantity: 3 },
+//     { name: 'Droid', price: 400, quantity: 7 },
+//     { name: 'Grip', price: 1200, quantity: 9 },
+//   ];
+
+//   let values = [];
+//   for (let product of products) {
+//     return values.push(product);
+//   }
+// }
+// console.log(getAllPropValues('name'));
+// console.log(getAllPropValues('quantity'));
+// console.log(getAllPropValues('category'));
+
+// function isEnoughCapacity(products, containerSize) {
+//   const productsArr = Object.values(products);
+//   let totalProducts = 0;
+//   for (const product of productsArr) {
+//     totalProducts += product;
+//   }
+//   return totalProducts <= containerSize;
+// }
+
+// console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
+
+// console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)); // false
+
+// console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)); // true
+
+// console.log(isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)); // false
+
+// const profile = {
+//   username: 'Jacob',
+//   playTime: 300,
+//   changeUsername(newName) {
+//     this.username = newName;
+//   },
+//   updatePlayTime(hours) {
+//     this.playTime += hours;
+//   },
+//   getInfo() {
+//     return `${this.username} has ${this.playTime} active hours!`;
+//   },
+// };
+
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+// profile.changeUsername('Marco');
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+// const transaction = {
+//   deposit: 'deposit',
+//   withdraw: 'withdraw',
+// };
+
+// const account = {
+//   balance: 0,
+//   allTransactions: [],
+//   createTransactions(amount, type) {
+//     const obj = {
+//       id: amount,
+//       amount,
+//       type,
+//     };
+//     return obj;
+//   },
+//   deposit(amount) {
+//     this.balance += amount;
+//     const newTransaction = this.createTransactions(amount, transaction.deposit);
+//     this.allTransactions.push(newTransaction);
+//   },
+//   withdraw(amount) {
+//     if (this.balance < amount) {
+//       console.log('Insufficient funds in the account');
+//       return;
+//     }
+//     this.balance -= amount;
+//     const withdrawTransaction = this.createTransactions(
+//       amount,
+//       transaction.withdraw
+//     );
+//     this.allTransactions.push(withdrawTransaction);
+//   },
+//   getBalance() {
+//     return this.balance;
+//   },
+//   getTransactionDetalis(id) {
+//     for (const item of this.allTransactions) {
+//       if (item.id === id) {
+//         return item;
+//       }
+//     }
+//     return 'Not found';
+//   },
+//   getTransactionTotal(type) {
+//     let total = 0;
+//     for (const item of this.allTransactions) {
+//       if (item.type === type) {
+//         total += item.amount;
+//       }
+//     }
+//     return total;
+//   },
+// };
+// account.deposit(500);
+// account.deposit(100);
+// account.withdraw(1000);
+// account.withdraw(200);
+// console.log(account.getBalance());
+// console.log(account.getTransactionDetalis(500));
+// console.log(account.getTransactionTotal(transaction.withdraw));
+// console.log(account);
