@@ -286,7 +286,33 @@
 // Додай сетеру price перевірку значення параметра newPrice, що передається.Якщо воно більше за MAX_PRICE,
 // сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну телефону.
 
-class Phone 
+// class Phone {
+//   #price;
+//   static MAX_PRICE = 40000;
+//   constructor(price) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice <= Phone.MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+// }
+
+// const newPhone = new Phone(1000);
+
+// console.log(newPhone.price);
+// newPhone.price = 1500;
+// console.log(newPhone.price);
+// newPhone.price = 450000;
+// console.log(newPhone.price);
+
+// У цьому коді була помилка, оскільки в методі set price використовується this.MAX_PRICE, але MAX_PRICE є статичною властивістю і повинна бути доступна через сам клас, а не через екземпляр. Тому замість this.MAX_PRICE потрібно використовувати Phone.MAX_PRICE.
 
 //************************************* */
 // Створіть клас BankAccount, який має конструктор для зберігання
@@ -334,4 +360,42 @@ class Phone
 // console.log(client.withdraw(260));
 // console.log(client.checkBalance());
 
+// class BankAccount {
+//   #accountNumber;
+//   #balance;
 
+//   constructor(accountNumber, balance) {
+//     this.#accountNumber = accountNumber;
+//     this.#balance = balance;
+//   }
+
+//   withdraw(amount) {
+//     if (this.#balance >= amount) {
+//       this.#balance -= amount;
+//       console.log(
+//         `Знято ${amount} грн. Залишок на рахунку: ${this.#balance} грн.`
+//       );
+//     } else {
+//       console.log('Недостатньо коштів на рахунку.');
+//     }
+//   }
+
+//   deposit(amount) {
+//     this.#balance += amount;
+//     console.log(
+//       `Поповнено ${amount} грн. Залишок на рахунку: ${this.#balance} грн.`
+//     );
+//   }
+
+//   checkBalance() {
+//     console.log(`Залишок на рахунку: ${this.#balance} грн.`);
+//   }
+// }
+
+// // Приклад використання
+// const client = new BankAccount(12345, 250);
+// client.withdraw(10); // Знімає 10 грн.
+// client.withdraw(260); // Спроба зняти більше, ніж є на рахунку
+// client.deposit(20); // Поповнює рахунок на 20 грн.
+// client.withdraw(260); // Тепер знімає доступну суму
+// client.checkBalance(); // Перевіряє баланс
