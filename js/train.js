@@ -300,3 +300,7 @@
 // Виводить повідомлення: `Поповнено amount грн. Залишок на рахунку: balance грн.`
 // checkBalance - метод для перевірки балансу.
 // Виводить повідомлення `Залишок на рахунку: balance грн.`
+
+class BankAccount {
+  constructor(number, balance) {}
+}
