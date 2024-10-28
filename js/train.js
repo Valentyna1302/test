@@ -286,6 +286,8 @@
 // Додай сетеру price перевірку значення параметра newPrice, що передається.Якщо воно більше за MAX_PRICE,
 // сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну телефону.
 
+class Phone 
+
 //************************************* */
 // Створіть клас BankAccount, який має конструктор для зберігання
 // номеру рахунку та балансу.
@@ -301,6 +303,35 @@
 // checkBalance - метод для перевірки балансу.
 // Виводить повідомлення `Залишок на рахунку: balance грн.`
 
-class BankAccount {
-  constructor(number, balance) {}
-}
+// class BankAccount {
+//   constructor(number, balance) {
+//     this.number = number;
+//     this.balance = balance;
+//   }
+
+//   withdraw(amount) {
+//     if (this.balance >= amount) {
+//       this.balance = this.balance - amount;
+//       return `Знято ${amount} грн. Залишок на рахунку: ${this.balance} грн.`;
+//     }
+//     return 'Недостатньо коштів на рахунку.';
+//   }
+
+//   deposit(amount) {
+//     this.balance = this.balance + amount;
+//     return `Поповнено ${amount} грн. Залишок на рахунку: ${this.balance} грн.`;
+//   }
+
+//   checkBalance() {
+//     return `Залишок на рахунку: ${this.balance} грн`;
+//   }
+// }
+
+// const client = new BankAccount(12345, 250);
+// console.log(client.withdraw(10));
+// console.log(client.withdraw(260));
+// console.log(client.deposit(20));
+// console.log(client.withdraw(260));
+// console.log(client.checkBalance());
+
+
