@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <p><a href="./index.html">Go back</a></p>
+    <div class="color-picker"></div>
+
+    <section class="hero">
+      <h1 class="hero-title">About me</h1>
+      <img
+        class="hero-img"
+        src="./image/made-img.jpg"
+        alt="Melted chocolate"
+        width="320"
+      />
+    </section>
+
+    <input type="text" class="js-input" />
+
+    <div class="actions">
+      <button type="button" data-action="add">Create</button>
+      <button type="button" data-action="remove">Delete</button>
+      <button type="button" data-action="edit">Edit</button>
+    </div>
+
+    <div class="hero-div"></div>
+
+    <ul class="site-nav">
+      <li class="site-nav-item">
+        <a href="/about" class="site-nav-link">About</a>
+      </li>
+      <li class="site-nav-item">
+        <a href="/portfolio" class="site-nav-link">Portfolio</a>
+      </li>
+      <li class="site-nav-item">
+        <a href="/contact" class="site-nav-link">Contacts</a>
+      </li>
+    </ul>
+
+    <table class="transaction-table js-transaction-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Who</th>
+          <th>Transaction Type</th>
+          <th>Account Name</th>
+          <th>Account Number</th>
+        </tr>
+      </thead>
+    </table>
+
+    <script src="./js/module-7.js"></script>
+  </body>
+</html>

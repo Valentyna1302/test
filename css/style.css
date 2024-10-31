@@ -1,0 +1,28 @@
+.hero-img {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.js-input {
+  margin-bottom: 5px;
+}
+
+.color-picker-option {
+  display: inline-block;
+  width: 74px;
+  height: 74px;
+  margin: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.transaction-table {
+  border-collapse: collapse;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 8px;
+  border: 1px solid #2a2a2a;
+}
