@@ -249,3 +249,139 @@
 //     .join('');
 
 // tableEl.insertAdjacentHTML('beforeend', createMarkup(transactionHistory));
+
+//* З використанням властивостей і методів DOM-елементів, напиши скрипт, який:
+
+//* Порахує й виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
+
+//*Для кожного елемента li.item у списку ul#categories знайде й виведе в консоль текст заголовка елемента (тегу <h2>) і кількість елементів у категорії (усіх <li>, вкладених у нього).
+
+// const categories = document.querySelectorAll('#categories li.item'); // повертає всі елементи з селектором #categories li.item — це <li> елементи з класом item всередині елемента з ID categories
+
+// console.log(`Number of categories: ${categories.length}`);
+
+// categories.forEach(category => {
+//   console.log(`Category: ${category.querySelector('h2').textContent}`); // Для отримання заголовка категорії (<h2>) у поточному елементі category використовується querySelector('h2'). Властивість textContent отримує текст, який міститься в <h2>, і цей текст виводиться в консоль.
+//   console.log(`Elements: ${category.querySelectorAll('ul > li').length}`); // Запис 'ul > li' — це CSS-селектор, який вказує на безпосередніх дочірніх елементів <li> всередині <ul>. Розберемо його детальніше: ul — вибирає елемент <ul> (незалежно від його місця у документі). > — це оператор дочірнього селектора, який обмежує пошук тільки безпосередніми дочірніми елементами. li — вибирає елемент <li>. Отже, селектор 'ul > li' знайде тільки ті елементи <li>, які є прямими дочірніми елементами <ul>. Іншими словами, він не захоплює вкладені на глибшому рівні <li>.
+// });
+
+//* Напиши скрипт для створення галереї зображень на основі масиву даних. HTML містить список ul.gallery.
+
+//* Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. Ти можеш створити й додати HTML-елементи, використовуючи document.createElement() і elem.append() або шаблонні рядки і elem.insertAdjacentHTML().
+
+//* Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+//* Додай мінімальне оформлення галереї флексбоксами через CSS класи.
+
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+//   {
+//     url: 'https://cdn.pixabay.com/photo/2019/05/17/09/27/the-alps-4209272_1280.jpg',
+//     alt: 'Alpine Spring Meadows',
+//   },
+//   {
+//     url: 'https://cdn.pixabay.com/photo/2019/05/16/21/10/landscape-4208255_1280.jpg',
+//     alt: 'Nature Landscape',
+//   },
+//   {
+//     url: 'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
+//     alt: 'Lighthouse Coast Sea',
+//   },
+// ];
+
+// const createGallery = document.querySelector('.gallery');
+
+// const elements = images.map(image => {
+//   const imageItem = document.createElement('li');
+//   imageItem.classList.add('gallery-item');
+
+//   const imageEl = document.createElement('img');
+//   imageEl.src = image.url;
+//   imageEl.alt = image.alt;
+
+//   imageItem.append(imageEl);
+//   return imageItem;
+// });
+
+// createGallery.append(...elements);
+
+// const colorContainerEl = document.querySelector('.color-picker');
+
+// const elements = options.map(option => {
+//   const buttonEl = document.createElement('button');
+//   buttonEl.classList.add('color-picker-option');
+//   buttonEl.textContent = option.label;
+//   buttonEl.style.backgroundColor = option.color;
+
+//   return buttonEl;
+// });
+
+// console.log(elements);
+
+// colorContainerEl.append(...elements); // метод append приймає переліком елементи, тобто якщо їх потрібно передати декілька, то робимо це через кому. А ми сюди передали масив і щоб розгорнути його використовуємо spread оператор.
+
+//* Завдання 3 Напиши скрипт, який під час набору тексту в інпуті input#name-input (подія input) підставляє його поточне значення в span#name-output як ім’я для привітання. Обов’язково очищай значення в інпуті по краях від пробілів . Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous".
+
+// const textInput = document.querySelector('input#name-input');
+// const textOutput = document.querySelector('span#name-output');
+
+// textInput.addEventListener('input', event => {
+//   if (event.currentTarget.value.trim() === '') {
+//     return (textOutput.textContent = 'Anonymous');
+//   }
+//   textOutput.textContent = event.currentTarget.value.trim();
+// });
+
+//* відправлення форми form.login-form повинна відбуватися за подією submit.
+//* Під час відправлення форми сторінка не повинна перезавантажуватися.
+//* Якщо при сабміті у формі є незаповнені поля, виводь alert з попередженням про те, що 'All form fields must be filled in'. Не додавай на інпути атрибут required, валідація має відбуватися саме через JS.
+//* Якщо користувач заповнив усі поля і відправив форму, збери значення полів в об'єкт з двома властивостями, де ключ — це ім'я інпутів, а значення — відповідні значення цих інпутів, очищені від пробілів по краях. Для доступу до елементів форми використовуй властивість elements.
+//* При сабміті форми виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
+
+// const registerForm = document.querySelector('.login-form');
+// registerForm.addEventListener('submit', handleSubmit);
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+//   const form = event.target;
+//   const email = form.elements.email.value.trim();
+//   const password = form.elements.password.value.trim();
+//   if (email === '' || password === '') {
+//     return alert('All form fields must be filled in');
+//   } else {
+//     const dataForm = {
+//       email,
+//       password,
+//     };
+//     console.log(dataForm);
+//     form.reset();
+//   }
+// }
+
+//* Напиши скрипт, який змінює колір фону елемента <body> через інлайн-стиль по кліку на button.change-color і задає це значення кольору текстовим вмістом для span.color.
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+
+// const changeColorBtn = document.querySelector('.change-color');
+// const colorName = document.querySelector('.color');
+
+// const handleClick = () => {
+//   document.body.style.backgroundColor = getRandomHexColor();
+//   colorName.textContent = getRandomHexColor();
+// };
+
+// changeColorBtn.addEventListener('click', handleClick);
