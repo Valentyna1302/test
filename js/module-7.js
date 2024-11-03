@@ -385,3 +385,217 @@
 // };
 
 // changeColorBtn.addEventListener('click', handleClick);
+
+//******************** Lesson 2 ********************/
+
+//* click
+
+// const btn = document.querySelector('.js-click');
+// const box = document.querySelector('.js-box');
+
+// // btn.addEventListener('click', () => {
+// //   console.log('click'); // функцію можна написати одразу
+// // });
+
+// btn.addEventListener('click', handleClick);
+// box.addEventListener('click', handleClick); // так ми добавляємо слухача події на квадрат теж
+
+// let step = 0;
+
+// function handleClick() {
+//   // або винести в окрему функцію
+//   step += 50;
+//   box.style.marginTop = `${step}px`;
+//   box.style.marginLeft = `${step}px`;
+// }
+
+//* change, input
+
+// const checkbox = document.querySelector('.js-checkbox');
+
+// checkbox.addEventListener('change', () => {
+// якщо потрібно відслідкувати подію на чекбоксі, радіокнопкі ми слухаємо подію change
+//   console.log('ok');
+// });
+
+// const input = document.querySelector('.js-user-name');
+
+// input.addEventListener('change', handleInput); // тут чендж відпрацьовує при втраті фокусу, тобто не одразу як ми очікуємо, для цього існує подія input
+
+// input.addEventListener('input', handleInput);
+
+// //
+// function handleInput(event) {
+//   console.log(event.target); // отримаємо елеменет з яким ми зараз працюємо <input type="text" class="js-user-name" />, це то саме що input в даному прикладі
+//   console.log(event.target.value); // актуальні дані які ми вводимо в наш інпут
+//   console.log(input.value); // враховуючи що event.target це то семе що input, ми отримуємо той самий результат
+// }
+
+//* focus, blur
+
+// const input = document.querySelector('.js-user-name');
+// input.addEventListener('focus', () => { // виводить коли є фокус
+//   console.log('focus');
+// });
+// input.addEventListener('blur', () => { // виводить коли фокус втрачаємо
+//   console.log('blur');
+// });
+
+//* forms
+
+// const form = document.querySelector('.js-form');
+// form.addEventListener('submit', handleSubmit); // подію вішаємо безпосередньо на форму. Відправлення форми відбувається подією submit.
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+//   const elements = event.target.elements;
+
+//   const info = {
+//     email: elements.email.value,
+//     password: elements.password.value,
+//     comment: elements.comment.value,
+//   };
+//   console.log(info);
+//   event.target.reset(); // очищаємо дані з форми
+// }
+
+//* ketpress, keydown, keyup
+
+// document.addEventListener('keypress', handleKeyPress); // не працює зі спец-символами (альт, шифт)
+// function handleKeyPress(event) {
+//   console.log(event.key);
+//   console.log(event.code);
+// }
+
+// document.addEventListener('keydown', handleKeyPress); // працює зі спец-символами
+// function handleKeyPress(event) {
+//   console.log(event.key);
+//   console.log(event.code);
+// }
+
+//* події миші
+//* mouseenter i mouseleave (це ховер)
+//* mouseover i mouseout
+//* mousemove (chatty event - балакуча подія )
+
+// const box = document.querySelector('.js-box');
+// box.addEventListener('mouseenter', onMouseEnter); // відпрацьовує як ховер
+// box.addEventListener('mouseleave', onMouseLeave); // відпрацьовує як ховер
+// function onMouseEnter() {
+//   console.log('onMouseEnter');
+// }
+
+// function onMouseLeave() {
+//   console.log('onMouseLeave');
+// }
+
+// box.addEventListener('mouseover', onMouseOver); // чутливий до вкладених елементів
+// box.addEventListener('mouseout', onMouseOut); // так само
+// function onMouseOver() {
+//   console.log('onMouseOver');
+// }
+
+// function onMouseOut() {
+//   console.log('onMouseOut');
+// }
+
+// box.addEventListener('mousemove', onMouseMove); // відбувається при кожному русі мишки
+
+// function onMouseMove(event) {
+//   console.log(event);
+// }
+
+//* Задача
+
+/**
+ * Реалізуй пошук автомобілів по сайту
+ * Користувач потрапляє на сайт і одразу бачить форму для пошуку
+ * і картки всіх автомобілів (масив cars)
+ * Користувач може ввести в форму назву Марки або Моделі авто і в
+ * тегу селект обрати що він ввів Марку або Модель (https://prnt.sc/PkkZZRy_ggtT)
+ * Після натискання кнопки пошуку (сабміт форми) відмалюй авто
+ * які збігаються з критеріями пошуку
+ */
+
+const cars = [
+  {
+    id: 1,
+    car: 'Audi',
+    type: 'A6',
+    price: 30000,
+    img: 'https://static.wixstatic.com/media/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg/v1/fill/w_520,h_338,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/90aeac_387e937e295a4f8586d9ff9d09b60cff~mv2.jpg',
+  },
+  {
+    id: 2,
+    car: 'Honda',
+    type: 'Civic',
+    price: 12000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU',
+  },
+  {
+    id: 3,
+    car: 'Audi',
+    type: 'Q7',
+    price: 40000,
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg',
+  },
+  {
+    id: 4,
+    car: 'BMW',
+    type: '5 siries',
+    price: 9000,
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU',
+  },
+  {
+    id: 5,
+    car: 'Honda',
+    type: 'Accord',
+    price: 20000,
+    img: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg',
+  },
+  {
+    id: 6,
+    car: 'Volvo',
+    type: 'XC60',
+    price: 7000,
+    img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+  },
+];
+
+const form = document.querySelector('.js-form');
+const container = document.querySelector('.js-list');
+
+form.addEventListener('submit', handleSearch);
+
+function createMarkup(arr) {
+  return arr
+    .map(
+      item => `
+    <li class="car-card">
+    <img src="${item.img}" alt="${item.type}" class="car-image">
+    <h2 class="car-title">${item.car}</h2>
+<h3 class="car-type">${item.type}</h3>
+<span class="car-price">${item.price}</span>
+    </li>
+    `
+    )
+    .join('');
+}
+
+container.style.display = 'flex';
+container.style.flexWrap = 'wrap';
+container.style.gap = '25px';
+
+container.insertAdjacentHTML('beforeend', createMarkup(cars));
+
+function handleSearch(event) {
+  event.preventDefault();
+  const query = event.target.elements.query;
+  const options = event.target.elements.options;
+
+  const result = cars.filter(item =>
+    item[options.value].toLowerCase().includes(query.value.toLowerCase())
+  );
+
+  console.log(result);
+}
